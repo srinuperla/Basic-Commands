@@ -1,0 +1,42 @@
+srinivas@KPI-SrinuPerlaTrainee:~$ whoami
+srinivas
+srinivas@KPI-SrinuPerlaTrainee:~$ sudo bash
+[sudo] password for srinivas:
+root@KPI-SrinuPerlaTrainee:~# su srinivas
+srinivas@KPI-SrinuPerlaTrainee:~$ whoami
+srinivas
+srinivas@KPI-SrinuPerlaTrainee:~$ sudo bash
+root@KPI-SrinuPerlaTrainee:~# sudo adduser perlasrinu
+Adding user `perlasrinu' ...
+Adding new group `perlasrinu' (1003) ...
+Adding new user `perlasrinu' (1003) with group `perlasrinu' ...
+Creating home directory `/home/perlasrinu' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+Changing the user information for perlasrinu
+Enter the new value, or press ENTER for the default
+        Full Name []: ^[[3~
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+chfn: name with non-ASCII characters: ''
+Is the information correct? [Y/n]
+root@KPI-SrinuPerlaTrainee:~# grep "unix" basic .txt
+grep: .txt: No such file or directory
+root@KPI-SrinuPerlaTrainee:~# ls -l | grep -n "unix" basic .txt
+grep: .txt: No such file or directory
+root@KPI-SrinuPerlaTrainee:~# ls -l | grep -n "unix" srinivas
+grep: srinivas: No such file or directory
+root@KPI-SrinuPerlaTrainee:~# sort basic .txt
+sort: cannot read: .txt: No such file or directory
+root@KPI-SrinuPerlaTrainee:~# vi editor commands
+2 files to edit
+root@KPI-SrinuPerlaTrainee:~# view editor commands
+2 files to edit
+root@KPI-SrinuPerlaTrainee:~# sh editor commands
+editor: 1: editor: Press: not found
+editor: 2: editor: Syntax error: "in" unexpected
+root@KPI-SrinuPerlaTrainee:~#
