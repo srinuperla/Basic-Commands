@@ -1,0 +1,95 @@
+#!/bin/sh
+echo "enter a number"
+read n
+if [$n -lt 10] && [$n -gt 30]
+then
+        echo " enter number 10 to 30"
+else
+        echo " the number is out of range"
+fi
+
+#!/bin.sh
+arr=(pink black red)
+for i in ${arr[@]}
+do
+        echo $i
+done
+
+#!/bin/sh
+for val in {1..20..2}
+do
+        if [[ $val -eq 9 ]]
+        then
+                break
+        else
+                echo "printing ${val}"
+        fi
+done
+#!/bin/sh
+for val in {1..20..2}
+do
+        if [[ $val -eq 9 ]]
+        then
+                continue
+        fi
+        echo "printing ${val}"
+done
+#!/bin/sh
+echo "enter a number"
+read a
+if [ $((n%2)) -eq 0 ]
+then
+        echo "the number is even"
+else
+        echo "the number is odd"
+fi
+#!/bin/sh
+#echo "enter a data"
+str="this is an example"
+for n in $str
+do
+        echo $n
+done#!/bin/sh
+func () {
+echo "this is my first function program $1 $2"
+}
+func kpi company
+#!/bin/sh
+echo "enter a number"
+read a
+if [ $a -lt 50 ]
+then
+        echo "true"
+else
+        echo "false"
+fi
+#!/bin/sh
+echo "enter a number"
+read a
+echo "enter another number"
+read b
+sum=$(($a + $b))
+echo "the sum of a and b is"$sum
+#!/bin/sh
+option="${1}"
+case ${option} in
+        -f) FILE="${2}"
+                echo "file name is $FILE"
+                ;;
+        -d) DIR="${2}"
+                echo "dir name is $DIR"
+                ;;
+        *)
+               echo "the phase name is ${0} : usage : [-f file] | [-d dir]"
+              exit 1
+              ;;
+esac
+#!/bin/sh
+getvalue() {
+
+        ABC=$1
+        XYZ="something" $ABC
+        echo $XYZ
+}
+VALUE=$( getvalue "12345" )
+echo $VALUE
