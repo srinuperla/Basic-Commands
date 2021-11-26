@@ -1,0 +1,21 @@
+What is pseudocode example?
+Pseudocode is an artificial and informal language that helps programmers develop algorithms. Pseudocode is a "text-based" detail (algorithmic) design tool.
+The rules of Pseudocode are reasonably straightforward. All statements showing "dependency" are to be indented.
+
+How do you write a pseudo code example?
+Rules of writing pseudocode
+Always capitalize the initial word (often one of the main 6 constructs).
+Have only one statement per line.
+Indent to show hierarchy, improve readability, and show nested constructs.
+Always end multiline sections using any of the END keywords (ENDIF, ENDWHILE, etc.).
+
+
+What is pseudocode in Python with example?
+Image result for pseudocode examples
+Python pseudocode is more like an algorithmic representation of the code involved. This means when a code is expected to be formulated it cannot be directly drafted.
+The code will need to be first generated into a Python pseudocode and then it needs to be formulated into an actual code.
+
+What is pseudo code in data structure?
+Image result for pseudocode examples
+Pseudo code: It's simply an implementation of an algorithm in the form of annotations and informative text written in plain English. It has no syntax like any of the programming
+language and thus can't be compiled or interpreted by the computer.
