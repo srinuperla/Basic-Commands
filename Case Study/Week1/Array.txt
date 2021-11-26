@@ -1,0 +1,19 @@
+#this is the text file
+KPI Partners
+Hyderabad
+Bangalore
+Pune
+Chennai
+
+============
+
+#!/bin/bash
+arr=()
+while read -r line;
+do
+        arr+=("$(echo "$line")")
+done<text.sh
+for i in "${arr[@]}"
+do
+        echo "$i"
+done
