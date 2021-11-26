@@ -1,8 +1,0 @@
-Data warehousing is the secure electronic storage of information by a business or other organization. ...
-The warehouse becomes a library of historical data that can be retrieved and analyzed in order to inform decision-making in the business.
-Also known as enterprise data warehousing, data warehousing is an electronic method of organizing, analyzing, and reporting information. ...
-For example, data warehousing makes data mining possible, which assists businesses in looking for data patterns that can lead to higher sales and profits
-
-What is a data warehouse vs database?
-What are the differences between a database and a data warehouse? A database is any collection of data organized for storage, accessibility, and retrieval.
-A data warehouse is a type of database the integrates copies of transaction data from disparate source systems and provisions them for analytical use.
