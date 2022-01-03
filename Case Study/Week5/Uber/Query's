@@ -1,0 +1,90 @@
+
+
+select * from fact_trip
+
+select * from Dim_city
+
+ALTER TABLE fact_trip ADD CONSTRAINT FK_fact_trip_city_id FOREIGN KEY(city_id) REFERENCES dim_city(city_id)
+
+
+
+---How many city_ids does uberPOOL operate in?
+
+SELECT
+         city_id,
+	     product_type_name
+FROM
+         Fact_trip
+WHERE
+         product_type_name = 'uberPOOL'
+ORDER BY
+         city_id
+
+---Which city_id has the highest error in ETA (where error in ETA = {(eta - ata)/ata}) for the given time period?
+
+SELECT
+      city_id,
+	  eta, ata,
+	  ufp_fare,
+	  error
+FROM
+      Fact_trip where  ETA = '{(eta - ata)/ata}'
+
+---Which is the product type with highest total revenue in SanFrancisco?
+
+SELECT 
+         top 1 
+         F.product_type_name,
+		 D.city_name,
+		 SUM(f.fare_final)
+FROM
+         Fact_trip as F
+	     INNER JOIN
+	     Dim_city as D ON D.city_id = F.city_id
+WHERE 
+         city_name='SanFrancisco'
+GROUP BY
+         F.product_type_name, D.city_name
+order by 3 desc
+     
+---Which are the products in each city where total revenue(fare_final) > $1000?
+
+SELECT
+	  -- F.product_type_name,
+	   SUM(F.fare_final),
+	   D.city_name
+FROM   
+       Fact_trip   AS F
+	   INNER JOIN
+	   Dim_city    AS D ON D.city_id=F.city_id
+GROUP BY
+      -- F.product_type_name,
+	   D.city_name
+order by  3  
+
+---Get to 2nd highest country by Uber Revenue (fare_final) for 2nd week of June 2018 across product
+
+WITH RESULT AS
+(
+SELECT FARE_FINAL, DATESTR, DENSE_RANK() OVER(ORDER BY FARE_FINAL DESC) AS DRNK
+FROM FACT_TRIP
+)
+SELECT FARE_FINAL, DATESTR
+FROM RESULT
+WHERE RESULT.DRNK=2
+
+---Get WOW growth % for US region for June Month. WOW- Week over week
+
+SELECT
+(
+(SELECT SUM(FARE_FINAL) FROM FACT_TRIP WHERE DATESTR=('2018-06-01')-
+(SELECT SUM(FARE_FINAL) FROM FACT_TRIP WHERE DATESTR=('2018-06-06')/
+(SELECT SUM(FARE_FINAL) FROM FACT_TRIP WHERE DATESTR=('2018-06-12'))* 100 AS GROWTH
+FROM FACT_TRIP ORDER BY DATESTR
+
+
+
+
+
+
+
