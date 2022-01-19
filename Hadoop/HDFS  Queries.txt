@@ -1,0 +1,109 @@
+[cloudera@quickstart ~]$ id cloudera
+uid=501(cloudera) gid=501(cloudera) groups=501(cloudera),502(default)
+[cloudera@quickstart ~]$ hadoop fs -ls /
+Found 6 items
+drwxrwxrwx   - hdfs  supergroup          0 2017-10-23 10:29 /benchmarks
+drwxr-xr-x   - hbase supergroup          0 2022-01-05 23:14 /hbase
+drwxr-xr-x   - solr  solr                0 2017-10-23 10:32 /solr
+drwxrwxrwt   - hdfs  supergroup          0 2022-01-05 23:26 /tmp
+drwxr-xr-x   - hdfs  supergroup          0 2020-05-22 02:53 /user
+drwxr-xr-x   - hdfs  supergroup          0 2017-10-23 10:31 /var
+[cloudera@quickstart ~]$ hadoop fs -ls /user
+Found 9 items
+drwxr-xr-x   - cloudera cloudera            0 2020-06-04 09:04 /user/cloudera
+drwxr-xr-x   - hdfs     supergroup          0 2020-05-22 02:53 /user/hdfs
+drwxr-xr-x   - mapred   hadoop              0 2022-01-05 23:27 /user/history
+drwxrwxrwx   - hive     supergroup          0 2017-10-23 10:31 /user/hive
+drwxrwxrwx   - hue      supergroup          0 2022-01-06 20:26 /user/hue
+drwxrwxrwx   - jenkins  supergroup          0 2017-10-23 10:30 /user/jenkins
+drwxrwxrwx   - oozie    supergroup          0 2017-10-23 10:30 /user/oozie
+drwxrwxrwx   - root     supergroup          0 2017-10-23 10:30 /user/root
+drwxr-xr-x   - hdfs     supergroup          0 2017-10-23 10:31 /user/spark
+[cloudera@quickstart ~]$ hadoop fs -help mkdir
+-mkdir [-p] <path> ... :
+  Create a directory in specified location.
+                                                  
+  -p  Do not fail if the directory already exists 
+[cloudera@quickstart ~]$ hadoop fs -mkdir /user/training/highlevel/lowlevel
+mkdir: `/user/training/highlevel/lowlevel': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -mkdir -p /user/training/highlevel/lowlevel
+mkdir: Permission denied: user=cloudera, access=WRITE, inode="/user":hdfs:supergroup:drwxr-xr-x
+[cloudera@quickstart ~]$ hadoop fs -ls -R /user/training/highlevel
+ls: `/user/training/highlevel': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -ls -R /user/training/highlevel/lowlevel
+ls: `/user/training/highlevel/lowlevel': No such file or directory
+[cloudera@quickstart ~]$ list
+bash: list: command not found
+[cloudera@quickstart ~]$ ls
+1stfolder.txt  cloudera-manager  Desktop       Downloads  enterprise-deployment.json  external-unified  kpi_partners  parcels        Pictures    rakeshdata1     Videos
+1stfoleder     cm_api.py         devices.json  eclipse    express-deployment.json     input.txt         lib           parquet_write  Public      sparkjars_exec  workspace
+avro           data1             Documents     emp.java   external_jars               kerberos          Music         part_dir       rakeshdata  Templates       zeyo_tab.java
+[cloudera@quickstart ~]$ hadoop fs -rmdir /user/training/highlevel
+rmdir: `/user/training/highlevel': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -ls /user/training
+ls: `/user/training': No such file or directory
+[cloudera@quickstart ~]$ hadoop fs -mkdir /user/landing
+mkdir: Permission denied: user=cloudera, access=WRITE, inode="/user":hdfs:supergroup:drwxr-xr-x
+[cloudera@quickstart ~]$ hadoop fs -ls /user/
+Found 9 items
+drwxr-xr-x   - cloudera cloudera            0 2020-06-04 09:04 /user/cloudera
+drwxr-xr-x   - hdfs     supergroup          0 2020-05-22 02:53 /user/hdfs
+drwxr-xr-x   - mapred   hadoop              0 2022-01-05 23:27 /user/history
+drwxrwxrwx   - hive     supergroup          0 2017-10-23 10:31 /user/hive
+drwxrwxrwx   - hue      supergroup          0 2022-01-06 20:26 /user/hue
+drwxrwxrwx   - jenkins  supergroup          0 2017-10-23 10:30 /user/jenkins
+drwxrwxrwx   - oozie    supergroup          0 2017-10-23 10:30 /user/oozie
+drwxrwxrwx   - root     supergroup          0 2017-10-23 10:30 /user/root
+drwxr-xr-x   - hdfs     supergroup          0 2017-10-23 10:31 /user/spark
+[cloudera@quickstart ~]$ hadoop fs -ls /user
+Found 9 items
+drwxr-xr-x   - cloudera cloudera            0 2020-06-04 09:04 /user/cloudera
+drwxr-xr-x   - hdfs     supergroup          0 2020-05-22 02:53 /user/hdfs
+drwxr-xr-x   - mapred   hadoop              0 2022-01-05 23:27 /user/history
+drwxrwxrwx   - hive     supergroup          0 2017-10-23 10:31 /user/hive
+drwxrwxrwx   - hue      supergroup          0 2022-01-06 20:26 /user/hue
+drwxrwxrwx   - jenkins  supergroup          0 2017-10-23 10:30 /user/jenkins
+drwxrwxrwx   - oozie    supergroup          0 2017-10-23 10:30 /user/oozie
+drwxrwxrwx   - root     supergroup          0 2017-10-23 10:30 /user/root
+drwxr-xr-x   - hdfs     supergroup          0 2017-10-23 10:31 /user/spark
+[cloudera@quickstart ~]$ clear
+
+[cloudera@quickstart ~]$ hadoop fs -ls
+Found 15 items
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 23:09 avro_json_write
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:15 csv_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-06-04 08:36 import_avro
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_avro_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:13 json_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:39 json_orc
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_orc_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:38 json_parquet
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 22:56 json_parquet_1
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:11 orc_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 22:14 parquet_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-23 23:11 parquet_json_write
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 13:40 part_dir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-22 14:01 part_dir2
+drwxr-xr-x   - cloudera cloudera          0 2020-06-04 09:04 zeyo_dir
+[cloudera@quickstart ~]$ hadoop fs -mkdir -p /user/training/KPI/class
+mkdir: Permission denied: user=cloudera, access=WRITE, inode="/user":hdfs:supergroup:drwxr-xr-x
+[cloudera@quickstart ~]$ mkdir KPI
+[cloudera@quickstart ~]$ cd KPI
+[cloudera@quickstart KPI]$ vi KPIFILE.txt
+[cloudera@quickstart KPI]$ cat KPIFILE.txt
+#include<stdio.h>
+int main()
+{
+print("hello new world!....");
+return 0;
+}
+[cloudera@quickstart KPI]$ cat kpi
+cat: kpi: No such file or directory
+[cloudera@quickstart KPI]$ PWD
+bash: PWD: command not found
+[cloudera@quickstart KPI]$ pwd
+/home/cloudera/KPI
+[cloudera@quickstart ~]$ rmdir /home/cloudera/KPI
+rmdir: failed to remove `/home/cloudera/KPI': Directory not empty
+[cloudera@quickstart ~]$ rmdir /home/cloudera/KPI/KPIFILE.txt
+rmdir: failed to remove `/home/cloudera/KPI/KPIFILE.txt': Not a directory
